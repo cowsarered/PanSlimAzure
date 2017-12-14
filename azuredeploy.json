@@ -4,7 +4,7 @@
   "parameters": {
     "networkSecurityGroupName": {
       "type": "string",
-      "defaultValue": "nsg-mgmt",
+      "defaultValue": "NSG-Mgmt",
       "metadata": {
         "description": "Network Security Group Name"
       }
@@ -18,14 +18,14 @@
     },
     "virtualNetworkName": {
       "type": "string",
-      "defaultValue": "vnet-FW",
+      "defaultValue": "VN-PaloAlto",
       "metadata": {
         "description": "Virtual Network Name"
       }
     },
     "virtualNetworkNewOrExisting": {
             "type": "string",
-            "defaultValue": "new",
+            "defaultValue": "existing",
             "allowedValues": [
                 "new",
                 "existing"
@@ -36,7 +36,7 @@
     },
     "virtualNetworkAddressPrefix": {
       "type": "string",
-      "defaultValue": "192.168.0.0/16",
+      "defaultValue": "192.168.1.0/24",
       "metadata": {
         "description": "CIDR for Virtual Network"
       }
@@ -50,83 +50,84 @@
     },
     "mgmtSubnetPrefix": {
       "type": "string",
-      "defaultValue": "192.168.0.0/24",
+      "defaultValue": "192.168.1.240/28",
       "metadata": {
         "description": "CIDR for Management Network"
       }
     },
     "untrustedSubnetName": {
       "type": "string",
-      "defaultValue": "Untrust",
+      "defaultValue": "untrusted",
       "metadata": {
         "description": "Subnet for Untrusted Network"
       }
     },
     "untrustedSubnetPrefix": {
       "type": "string",
-      "defaultValue": "192.168.1.0/24",
+      "defaultValue": "192.168.1.0/28",
       "metadata": {
         "description": "CIDR for Untrusted Network"
       }
     },
     "trustedSubnetName": {
       "type": "string",
-      "defaultValue": "Trust",
+      "defaultValue": "trusted",
       "metadata": {
         "description": "Subnet for Trusted Network"
       }
     },
     "trustedSubnetPrefix": {
       "type": "string",
-      "defaultValue": "192.168.2.0/24",
+      "defaultValue": "192.168.1.16/28",
       "metadata": {
         "description": "CIDR for Trusted Network"
       }
     },
     "appGatewayName": {
       "type": "string",
-      "defaultValue": "myAppGw",
+      "defaultValue": "AppGateway",
       "metadata": {
         "description": "App Gateway name - used to identify resource in Azure portal"
       }
     },
     "appGatewayDnsName": {
       "type": "string",
-      "metadata": {
+            "defaultValue": "AppGateway3453",
+            "metadata": {
         "description": "App Gateway Public IP DNS Name. Must be globally unique."
       }
     },
     "appGatewaySubnetName": {
       "type": "string",
-      "defaultValue": "AppGWSubnet",
+      "defaultValue": "appgw",
       "metadata": {
         "description": "Subnet for App Gateway"
       }
     },
     "appGatewaySubnetPrefix": {
       "type": "string",
-      "defaultValue": "192.168.3.0/24",
+      "defaultValue": "192.168.1.32/29",
       "metadata": {
         "description": "CIDR for App Gateway"
       }
     },
     "internalLoadBalancerName": {
       "type": "string",
-      "defaultValue": "myPrivateLB",
+      "defaultValue": "ILB-Web",
       "metadata": {
         "description": "Internal Load Balancer name - used to identify resource in Azure portal"
       }
     },
     "backendSubnetName": {
       "type": "string",
-      "defaultValue": "backendSubnet",
+      "defaultValue": "trusted",
       "metadata": {
         "description": "Subnet for Backend WWW Network"
       }
     },
     "backendSubnetPrefix": {
       "type": "string",
-      "defaultValue": "192.168.4.0/24",
+      "defaultValue": "192.168.1.16/28",
       "metadata": {
         "description": "CIDR for Backend WWW Network"
       }
@@ -141,7 +142,7 @@
        "metadata": {
           "description": "Azure VM size for backend VMs.  Not all sizes are available in all regions."
        },
-       "defaultValue": "Standard_D1"
+       "defaultValue": "Standard_D1_v2"
     },
     "firewallModel": {
        "type": "string",
@@ -176,23 +177,25 @@
        "metadata": {
           "description": "Azure VM size for VM-Series"
        },
-       "defaultValue": "Standard_D3"
+       "defaultValue": "Standard_D3_v2"
     },
     "MgmtPublicIPAddressName": {
       "type": "string",
+      "defaultValue": "mgmt4565",
       "metadata": {
         "description": "DNS Name prefix of public IP resource for Management interface of VM-Series firewall.  Name must be globally unique."
       }
     },
     "storageAccountName": {
       "type": "string",
+      "defaultValue": "sapaloalto25",
       "metadata": {
         "description": "Name of the storage account created to store the VM's disks.  Storage account name must be globally unique."
       } 
     },
     "storageAccountNewOrExisting" : {
        "type": "string",
-       "defaultValue" : "new",
+       "defaultValue" : "existing",
        "allowedValues" : [
           "new",
           "existing"
@@ -216,6 +219,7 @@
     },
     "username": {
       "type": "string",
+      "defaultValue": "totalcare",
       "metadata": {
         "description": "Username of the administrator account of VM instances"
       }
@@ -233,7 +237,7 @@
     },
     "password": {
       "type": "securestring",
-      "defaultValue": "",
+      "defaultValue": "Sistter12345#",
       "metadata": {
         "description": "Password for the administrator account of all VM instances. Must be specified if Authentication Type is 'password'."
       }
