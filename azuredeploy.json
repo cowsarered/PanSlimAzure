@@ -4,7 +4,7 @@
   "parameters": {
     "networkSecurityGroupName": {
       "type": "string",
-      "defaultValue": "NSG-Mgmt",
+      "defaultValue": "NSG-PANMgmt",
       "metadata": {
         "description": "Network Security Group Name"
       }
@@ -18,7 +18,7 @@
     },
     "virtualNetworkName": {
       "type": "string",
-      "defaultValue": "VN-PaloAlto",
+      "defaultValue": "DSS-T_vNet",
       "metadata": {
         "description": "Virtual Network Name"
       }
@@ -36,49 +36,49 @@
     },
     "virtualNetworkAddressPrefix": {
       "type": "string",
-      "defaultValue": "192.168.1.0/24",
+      "defaultValue": "10.85.16.0/21",
       "metadata": {
         "description": "CIDR for Virtual Network"
       }
     },
     "MgmtSubnetName": {
       "type": "string",
-      "defaultValue": "Mgmt",
+      "defaultValue": "Trusted1",
       "metadata": {
         "description": "Subnet for Management Network"
       }
     },
     "mgmtSubnetPrefix": {
       "type": "string",
-      "defaultValue": "192.168.1.240/28",
+      "defaultValue": "192.168.1.32/28",
       "metadata": {
         "description": "CIDR for Management Network"
       }
     },
     "untrustedSubnetName": {
       "type": "string",
-      "defaultValue": "untrusted",
+      "defaultValue": "Untrusted",
       "metadata": {
         "description": "Subnet for Untrusted Network"
       }
     },
     "untrustedSubnetPrefix": {
       "type": "string",
-      "defaultValue": "192.168.1.0/28",
+      "defaultValue": "192.168.1.16/28",
       "metadata": {
         "description": "CIDR for Untrusted Network"
       }
     },
     "trustedSubnetName": {
       "type": "string",
-      "defaultValue": "trusted",
+      "defaultValue": "Trusted1",
       "metadata": {
         "description": "Subnet for Trusted Network"
       }
     },
     "trustedSubnetPrefix": {
       "type": "string",
-      "defaultValue": "192.168.1.16/28",
+      "defaultValue": "192.168.1.32/28",
       "metadata": {
         "description": "CIDR for Trusted Network"
       }
@@ -99,14 +99,14 @@
     },
     "appGatewaySubnetName": {
       "type": "string",
-      "defaultValue": "appgw",
+      "defaultValue": "AppGWY",
       "metadata": {
         "description": "Subnet for App Gateway"
       }
     },
     "appGatewaySubnetPrefix": {
       "type": "string",
-      "defaultValue": "192.168.1.32/29",
+      "defaultValue": "192.168.1.0/29",
       "metadata": {
         "description": "CIDR for App Gateway"
       }
@@ -120,14 +120,14 @@
     },
     "backendSubnetName": {
       "type": "string",
-      "defaultValue": "trusted",
+      "defaultValue": "Trusted2",
       "metadata": {
         "description": "Subnet for Backend WWW Network"
       }
     },
     "backendSubnetPrefix": {
       "type": "string",
-      "defaultValue": "192.168.1.16/28",
+      "defaultValue": "192.168.1.48/28",
       "metadata": {
         "description": "CIDR for Backend WWW Network"
       }
@@ -188,7 +188,7 @@
     },
     "storageAccountName": {
       "type": "string",
-      "defaultValue": "sapaloalto25",
+      "defaultValue": "sarepo25",
       "metadata": {
         "description": "Name of the storage account created to store the VM's disks.  Storage account name must be globally unique."
       } 
